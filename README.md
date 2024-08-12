@@ -13,7 +13,7 @@ Dependencias Clave: Spring Boot Starter Web, Spring Boot Starter Data JPA, Sprin
 
 1. Clona el repositorio:
   
-   git clone https://github.com/tu_usuario/tu_proyecto.git
+   git clone https://github.com/sergioportillo91/linktic-backend
    
    cd tu_proyecto
 
