@@ -1,0 +1,51 @@
+server:
+  port: 8282
+  servlet:
+    context-path: /api/v1/reservation
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  api-docs:
+    path: /api/v1/reservation
+    enabled: true
+spring:
+  banner:
+    location: custom-banner.txt
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: reservation-api
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: MS_LINKTIC_CONFIG
+    password: sergio22101991
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  feign:
+    client:
+      config:
+        default:
+          connectTimeout: 5000
+          readTimeout: 2000
+          loggerLevel: basic
+  jpa:
+    properties:
+      hibernate.default_schema: MS_LINKTIC_CONFIG
+      jdbc:
+        lob:
+          non_contextual_creation: false
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database-platform: org.hibernate.dialect.OracleDialect
+
+log4j:
+  configurationFile: log4j2-spring.xml,log4j2-env.xml
+request-mapping:
+  controller:
+    auth: /auth
+    customer: /customer
+    reservation: /reservation
+    service: /service
